@@ -1,0 +1,18 @@
+{
+    "mods": [
+      {
+        "name": "Normal Mode Scaler",
+        "authors": "Rossay",
+        "description": "Scales all zones in Normal Mode to your level, with a level cap of 17.",
+        "types": ["ModTypes.Utility | ModTypes.Gameplay"],
+        "supports": ["[\"AoDK\"]"],,
+        "source": "https://github.com/Rossays/AodK-SDK-Mods/blob/main/Scaled%20Normal%20Mode/__init__.py",
+        "latest": "1.0",
+        "versions": {
+          "[Latest Version]": "https://github.com/Rossays/AodK-SDK-Mods/tree/main/Scaled%20Normal%20Mode",
+          "[Old Version]": "https://github.com/Rossays/AodK-SDK-Mods/tree/main/Scaled%20Normal%20Mode"
+        },
+      }
+    ],
+
+  }
