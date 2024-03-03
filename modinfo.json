@@ -4,7 +4,7 @@
         "source": "https://github.com/Rossays/BL-SDK-Mods",
         "issues": "https://github.com/Rossays/BL-SDK-Mods/issues",
         "supports":  [ "AoDK" ],
-        "license": "MIT"
+        "license": "GNU GPLv3"
       },
     "mods": [
       {
