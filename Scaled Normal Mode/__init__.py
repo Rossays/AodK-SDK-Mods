@@ -11,7 +11,7 @@ class Scaler(SDKMod):
     SupportedGames = Game.AoDK
     Types = ModTypes.Utility | ModTypes.Gameplay
     SaveEnabledState = EnabledSaveType.LoadOnMainMenu
-    Author = "Juso"
+    Author = "Rossay"
 
     @Hook("WillowGame.WillowPlayerController.SpawningProcessComplete")
     def onSpawn(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
