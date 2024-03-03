@@ -1,0 +1,23 @@
+{
+    "defaults": {
+        "authors": "Rossay",
+        "source": "https://github.com/Rossays/BL-SDK-Mods",
+        "issues": "https://github.com/Rossays/BL-SDK-Mods/issues",
+        "supports":  [ "AoDK" ],
+        "license": "MIT"
+      },
+    "mods": [
+      {
+        "name": "Normal Mode Scaler",
+        "description": ["Scales all zones in Normal Mode to your level, with a level cap of 17."],
+        "tagline": "Adds player scaling to Normal Mode.",
+        "types": ["Utility", "Gameplay"],
+        "latest": "1.0",
+        "supports":  [ "AoDK" ],
+        "versions": {
+          "1.0": "https://github.com/Rossays/BL-SDK-Mods/blob/main/Normal%20Mode%20Scaler/Normal%20Mode%20Scaler.zip"  
+      },
+      "requirements": {}
+      }  
+    ]
+  }
