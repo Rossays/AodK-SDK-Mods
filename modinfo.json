@@ -17,7 +17,7 @@
         "latest": "2.0",
         "supports":  [ "BL2", "TPS", "AoDK" ],
         "versions": {
-          "2.0": "https://github.com/Rossays/BL-SDK-Mods/blob/main/Game%20Scaler/GameScaler.zip"  
+          "2.0": "https://github.com/Rossays/BL-SDK-Mods/raw/main/Game%20Scaler/GameScaler.zip"  
       },
       "requirements": {}
       }  
