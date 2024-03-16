@@ -8,8 +8,8 @@ class Scaler(SDKMod):
     Name: str = "Game Scaler"
     Description: str = ("Scales all zones in Normal Mode and True Vault Hunter Mode to your level, and removes the level cap for TVHM scaling in BL2 and TPS.\n"
                        "In BL2 and TPS, Normal Mode level cap is 35, TVHM minimum level is 30.\n"
-                       "In AoDK, Normal Mode level cap and TVHM minimum level are both 17.")
-    Version: str = "2.0"
+                       "In AoDK, Normal Mode level cap is 18 and TVHM minimum level is 17.")
+    Version: str = "2.1"
     Author: str = "Rossay"
     SupportedGames = Game.BL2 | Game.TPS | Game.AoDK
     Types: ModTypes = ModTypes.Gameplay | ModTypes.Utility
@@ -22,8 +22,8 @@ class Scaler(SDKMod):
             balance_normal_mode_AoDK = unrealsdk.FindObject("GameBalanceDefinition", "GD_Aster_GameStages.Balance.Aster_P1_GameBalance")
             balance_tvhm_AoDK = unrealsdk.FindObject("GameBalanceDefinition", "GD_Aster_GameStages.Balance.Aster_P2_GameBalance")
             for region in balance_normal_mode_AoDK.BalanceByRegion:
-                region.MinDefaultGameStage.BaseValueConstant = min(player_level, 17)
-                region.MaxDefaultGameStage.BaseValueConstant = min(player_level, 17)
+                region.MinDefaultGameStage.BaseValueConstant = min(player_level, 18)
+                region.MaxDefaultGameStage.BaseValueConstant = min(player_level, 18)
             for region in balance_tvhm_AoDK.BalanceByRegion:
                 region.MinDefaultGameStage.BaseValueConstant = max(player_level, 17)
                 region.MaxDefaultGameStage.BaseValueConstant = max(player_level, 17)
