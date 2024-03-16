@@ -4,7 +4,7 @@
 
 # Changelog
 ## Version 2.1
-Changed Normal Mode level cap in AoDK from 17 to 18 to match vanilla game. Updated mod descriptio to reflect the change.
+Changed Normal Mode level cap in AoDK from 17 to 18 to match vanilla game. Updated mod description to reflect the change.
 ## Version 2.0
 Changed name of the mod from "Normal Mode Scaler" to "Game Scaler". Added TVHM scaling and compatibility with Borderlands 2 and Borderlands: The Pre-Sequel. Updated mod description to reflect changes.
 ## Version 1.0
