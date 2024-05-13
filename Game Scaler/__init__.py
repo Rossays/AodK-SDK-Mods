@@ -1,8 +1,16 @@
 import unrealsdk
 from unrealsdk import *
 
-from ..ModMenu import SDKMod, Game, EnabledSaveType, ModTypes, Hook, RegisterMod
+from ..ModMenu import SDKMod, Game, EnabledSaveType, ModTypes, Hook, RegisterMod, Options, OptionManager
 
+oidLevelSlider = Options.Slider(
+    Caption="Level Slider",
+    Description="Fine adjust the levels of areas using this slider. Values are based on your level. You need to load into a new area or reload for changes to take effect.",
+    StartingValue=0,
+    MinValue=-15,
+    MaxValue=15,
+    Increment=1,
+)
 
 class Scaler(SDKMod):
     Name: str = "Game Scaler"
@@ -14,11 +22,12 @@ class Scaler(SDKMod):
     SupportedGames = Game.BL2 | Game.TPS | Game.AoDK
     Types: ModTypes = ModTypes.Gameplay | ModTypes.Utility
     SaveEnabledState = EnabledSaveType.LoadOnMainMenu
+    Options = [oidLevelSlider]
 
     if Game.GetCurrent() == Game.AoDK: 
         @Hook("WillowGame.WillowPlayerController.SpawningProcessComplete")
         def onSpawn(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
-            player_level = unrealsdk.GetEngine().GamePlayers[0].Actor.GetCachedSaveGame().ExpLevel
+            player_level = (unrealsdk.GetEngine().GamePlayers[0].Actor.GetCachedSaveGame().ExpLevel) + (oidLevelSlider.CurrentValue)
             balance_normal_mode_AoDK = unrealsdk.FindObject("GameBalanceDefinition", "GD_Aster_GameStages.Balance.Aster_P1_GameBalance")
             balance_tvhm_AoDK = unrealsdk.FindObject("GameBalanceDefinition", "GD_Aster_GameStages.Balance.Aster_P2_GameBalance")
             for region in balance_normal_mode_AoDK.BalanceByRegion:
@@ -31,7 +40,7 @@ class Scaler(SDKMod):
     elif Game.GetCurrent() == Game.BL2:
         @Hook("WillowGame.WillowPlayerController.SpawningProcessComplete")
         def onSpawn(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
-            player_level = unrealsdk.GetEngine().GamePlayers[0].Actor.GetCachedSaveGame().ExpLevel
+            player_level = (unrealsdk.GetEngine().GamePlayers[0].Actor.GetCachedSaveGame().ExpLevel) + (oidLevelSlider.CurrentValue)
             balance_normal_mode1 = unrealsdk.FindObject("GameBalanceDefinition", "GD_Aster_GameStages.Balance.Aster_P1_GameBalance")
             balance_tvhm1 = unrealsdk.FindObject("GameBalanceDefinition", "GD_Aster_GameStages.Balance.Aster_P2_GameBalance")
             balance_normal_mode2 = unrealsdk.FindObject("GameBalanceDefinition", "GD_Allium_GameStages.Balance.Allium_P1_GameBalance")
@@ -140,7 +149,7 @@ class Scaler(SDKMod):
     elif Game.GetCurrent() == Game.TPS:
         @Hook("WillowGame.WillowPlayerController.SpawningProcessComplete")
         def onSpawn(self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
-            player_level = unrealsdk.GetEngine().GamePlayers[0].Actor.GetCachedSaveGame().ExpLevel
+            player_level = (unrealsdk.GetEngine().GamePlayers[0].Actor.GetCachedSaveGame().ExpLevel) + (oidLevelSlider.CurrentValue)
             balance_normal_mode1 = unrealsdk.FindObject("GameBalanceDefinition", "GD_Ma_GameStages.Marigold_P1_GameBalance")
             balance_tvhm1 = unrealsdk.FindObject("GameBalanceDefinition", "GD_Ma_GameStages.Marigold_P2_GameBalance")
             balance_normal_mode2 = unrealsdk.FindObject("GameBalanceDefinition", "GD_Pet_GameStages.Balance.Petunia_P1_GameBalance")
